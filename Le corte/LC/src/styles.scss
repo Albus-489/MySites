@@ -68,10 +68,7 @@ body {
       left: 752px;
       top: 700px;
       transition: .3s box-shadow;
-      :hover{
-        box-shadow: 5px 10px 8px #2a29297b;
-        transition: .3s box-shadow;
-      }
+
 
       .leftbtn {
         margin-right: 30px;
@@ -84,9 +81,18 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: .5s box-shadow;
 
       }
 
     }
   }
+}
+.leftbtn:hover  , .rightbtn:hover{
+    box-shadow: 5px 10px 8px #2a29297b;
+    transition: .3s box-shadow;
+}
+
+span:hover{
+  cursor: pointer;
 }
