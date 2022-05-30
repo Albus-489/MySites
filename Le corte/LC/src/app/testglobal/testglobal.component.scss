@@ -1,0 +1,27 @@
+ul{
+  list-style: none;
+
+  li{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+
+    input{
+      margin-right: 1rem;
+    }
+
+    small{
+      position: absolute;
+      right: 40px;
+      bottom: 5px;
+      font-size: .8rem;
+    }
+
+    .completed{
+      text-decoration: line-through;
+    }
+  }
+}

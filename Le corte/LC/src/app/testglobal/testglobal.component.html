@@ -1,0 +1,25 @@
+<div *ngIf="!loading" style="color: black;" class="container">
+  <div class="col-4 offset-4">
+    <ul *ngIf="testboxService.testBox.length; else noList">
+      <li *ngFor="let item of testboxService.testBox; let i = index">
+
+        <span [class.completed]="item.completed">
+          <input type="checkbox" [checked]="item.completed" (change)="completeUnit(item.id)">
+          <strong>{{i + 1}}</strong> {{item.title}}
+        </span>
+
+        <small>{{item.date | date: 'short'}}</small>
+        <button class="btn btn-danger btn-sm rm" (click)="deleteUnit(item.id)">&times;</button>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-template #noList>
+<p style="text-align: center;"> No members on list now!</p>
+</ng-template>
+
+<div *ngIf="loading">
+  <p style="color: black; text-align:center">Loadign...</p>
+</div>
