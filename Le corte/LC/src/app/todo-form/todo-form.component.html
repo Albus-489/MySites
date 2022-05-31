@@ -1,4 +1,4 @@
 <div class="container">
-  <input type="text" placeholder="Add something.." [(ngModel)]="title">
-  <button class="btn btn-success btn-sm">+</button>
+  <input (keydown.enter)="addTask()" type="text" placeholder="Add something.." [(ngModel)]="title">
+  <button (click)="addTask()" class="btn btn-success btn-sm">+</button>
 </div>

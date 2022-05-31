@@ -34,4 +34,8 @@ export class TestboxService {
     const idx = this.testBox.findIndex(t => t.id  === id)
     this.testBox.splice(idx, 1)
   }
+
+  addTask(todo: TestInterface){
+    this.testBox.push(todo)
+  }
 }
