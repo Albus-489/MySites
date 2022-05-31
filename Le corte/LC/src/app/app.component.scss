@@ -1,72 +1,110 @@
-.intro {
-  width: 100%;
-  height: 100vh;
-  background: url('../assets/images/bgc.jpg') center no-repeat;
-  background-size: cover;
-  padding: 30px 405px;
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
 
-  .street {
-    text-align: left;
+  .contacts__row {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    justify-content: space-between;
   }
 
-  .phone {
-    text-align: end;
-  }
+  .main-menu__row {
+    a {
+      text-decoration: none;
+      color: white;
+      transition: .4s color;
 
-  .main-menu {
-    margin-top: 30px;
-    min-height: 47px;
-    margin-bottom: 423px;
+      &:hover {
+        color: rgb(212, 103, 103);
+        transition: .2s color;
+      }
+
+    }
+
+    display: flex;
+    justify-content: space-between;
+
+    .innerbox,
+    .outerbox {
+      padding: 13px 101px;
+      width: 285px;
+    }
 
     .innerbox {
       border: 1px solid #FFFFFF;
     }
 
     .outerbox {
-      border-top: 1px solid white;
-      border-bottom: 1px solid white;
-    }
-
-    .innerbox,
-    .outerbox {
-      //text-align: center;
-      padding-left: 55px;
-      padding-top: 10px;
+      border-top: 1px solid #FFFFFF;
+      border-bottom: 1px solid #FFFFFF;
     }
   }
 
-  .btns {
-    padding: 0;
-    margin-left: 20%;
-    max-width: 415px;
-    min-height: 50px;
-    left: 752px;
-    top: 700px;
-    transition: .3s box-shadow;
+  .btns__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 585px;
 
-
-    .leftbtn {
-      margin-right: 30px;
-    }
-
-    .leftbtn,
-    .rightbtn {
-      background: #998431;
-      max-width: 203px;
+    .lbtn,
+    .rbtn {
+      width: 203px;
+      height: 50px;
       display: flex;
-      align-items: center;
+      flex-direction: row;
       justify-content: center;
+      align-items: center;
+      padding: 15px 30px;
       transition: .5s box-shadow;
-
+      background: #99862A;
     }
 
+    .lbtn:hover,
+    .rbtn:hover {
+      box-shadow: 5px 10px 8px #2a29297b;
+      transition: .3s box-shadow;
+      cursor: pointer;
+    }
+
+    .rbtn {
+      margin-left: 15px;
+    }
+
+    .lbtn {
+      margin-right: 15px;
+    }
   }
 }
 
-.leftbtn:hover  , .rightbtn:hover{
-  box-shadow: 5px 10px 8px #2a29297b;
-  transition: .3s box-shadow;
+.content {
+  width: 100%;
+  height: 100vh;
+  background: url(../assets/images/bgc.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
 }
-.btntxt:hover{
-  cursor: pointer;
+
+.footer {
+  background-color: bisque;
+
+  .footer__row {
+
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #fff;
 }

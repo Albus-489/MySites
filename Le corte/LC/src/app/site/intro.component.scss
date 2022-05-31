@@ -1,0 +1,16 @@
+.container{
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.content{
+  flex: 1 1 auto;
+}
+
+.wrapper{
+  min-height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
