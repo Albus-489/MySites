@@ -1,91 +1,3 @@
-.container {
-  max-width: 1110px;
-  margin: 0 auto;
-
-  .contacts__row {
-    display: flex;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    justify-content: space-between;
-  }
-
-  .main-menu__row {
-    a {
-      text-decoration: none;
-      color: white;
-      transition: .4s color;
-
-      &:hover {
-        color: rgb(212, 103, 103);
-        transition: .2s color;
-      }
-
-    }
-
-    display: flex;
-    justify-content: space-between;
-
-    .innerbox,
-    .outerbox {
-      padding: 13px 101px;
-      width: 285px;
-    }
-
-    .innerbox {
-      border: 1px solid #FFFFFF;
-    }
-
-    .outerbox {
-      border-top: 1px solid #FFFFFF;
-      border-bottom: 1px solid #FFFFFF;
-    }
-  }
-
-  .btns__row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 585px;
-
-    .lbtn,
-    .rbtn {
-      width: 203px;
-      height: 50px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 30px;
-      transition: .5s box-shadow;
-      background: #99862A;
-    }
-
-    .lbtn:hover,
-    .rbtn:hover {
-      box-shadow: 5px 10px 8px #2a29297b;
-      transition: .3s box-shadow;
-      cursor: pointer;
-    }
-
-    .rbtn {
-      margin-left: 15px;
-    }
-
-    .lbtn {
-      margin-right: 15px;
-    }
-  }
-}
-
-.content {
-  width: 100%;
-  height: 100vh;
-  background: url(../assets/images/bgc.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-}
 
 .footer {
   background-color: bisque;
@@ -107,4 +19,128 @@
   flex-direction: column;
 
   color: #fff;
+  .content {
+    width: 100%;
+    height: 100vh;
+    background: url(../assets/images/bgc.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: flex;
+    .container {
+      max-width: 1110px;
+      margin: 0 auto;
+
+
+      .contacts__row {
+        display: flex;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        justify-content: space-between;
+
+      }
+
+      .main-menu__row {
+        a {
+          text-decoration: none;
+          color: white;
+          transition: .4s color;
+
+          &:hover {
+            color: rgb(212, 103, 103);
+            transition: .2s color;
+          }
+
+        }
+        display: flex;
+        justify-content: space-between;
+        .innerbox,
+        .outerbox {
+          padding: 13px 101px;
+          width: 285px;
+          border-bottom: 1px solid #FFFFFF;
+          text-align: center;
+        }
+
+        // .innerbox {
+        //   border: 1px solid #fffcfc;
+        // }
+
+        // .outerbox {
+        //   border-top: 1px solid #FFFFFF;
+        //   border-bottom: 1px solid #FFFFFF;
+        // }
+      }
+
+      .btns__row {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-around;
+        padding-top: 40%;
+        max-width: 445px;
+        position: relative;
+        .lbtn,
+        .rbtn {
+
+          width: 203px;
+          height: 50px;
+          margin-bottom: 5%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 15px 30px;
+          transition: .5s box-shadow;
+          background: #99862A;
+
+        }
+
+        .lbtn:hover,
+        .rbtn:hover {
+          box-shadow: 5px 10px 8px #2a29297b;
+          transition: .3s box-shadow;
+          cursor: pointer;
+        }
+
+        .rbtn {
+        }
+
+        .lbtn {
+        }
+      }
+    }
+  }
 }
+
+@media all and (max-width: 1110px){
+  .main-menu__row, .btns__row{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+// .wrapper2 {
+//   min-height: 100%;
+//   overflow: hidden;
+
+//   display: flex;
+//   flex-direction: column;
+
+//   color: #fff;
+//   .content {
+//     width: 100%;
+//     height: 100vh;
+//     background-color: #323024;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     position: relative;
+//     .container {
+//       max-width: 1110px;
+//       margin: 0 auto;
+//     }
+//   }
+// }
+

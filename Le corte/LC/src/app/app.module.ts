@@ -7,14 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestglobalComponent } from './testglobal/testglobal.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
-import { IntroComponent } from './site/intro.component';
+import { PracticeComponent } from './practice/practice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestglobalComponent,
     TodoFormComponent,
-    IntroComponent
+    PracticeComponent,
   ],
   imports: [
     BrowserModule,
