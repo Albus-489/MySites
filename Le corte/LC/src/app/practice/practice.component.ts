@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-practice',
   templateUrl: './practice.component.html',
   styleUrls: ['./practice.component.scss']
 })
-export class PracticeComponent implements OnInit {
+export class PracticeComponent implements OnInit, OnDestroy {
 
-  constructor() { }
-  arr1 = [true, true, true]
-  arr2 = [true, false, true]
+  constructor() {
+    console.log(this.word);
 
-  res1: any;
-  res2: any;
+   }
+
+  @Input() word = 'Child word cotr'
+
 
   users = [
     { id: 1, isActive: false },
@@ -23,13 +24,15 @@ export class PracticeComponent implements OnInit {
 
   usr = this.users
 
-  ngOnInit(): void {
 
-    this.res1 = this.arr2.reduce((acc, el) => {if (el === false) {acc = '|>> False inside! <<|'}return acc;}, '|>> Nothing <<|')
 
-    console.log(this.usr);
+  ngOnDestroy(): void {
+    this.word = 'Destroyed'
+    console.log("Practice ngOnDestroy",this.word);
+  }
 
-    this.toggleUserActivity(3)
+  ngOnChanges(): void {
+    console.log("Practice ngOnChanges",'Changes');
   }
 
   isFalse: boolean = false;
@@ -40,5 +43,38 @@ export class PracticeComponent implements OnInit {
       if(item.id === id)
         item.isActive = !item.isActive
     })
+  }
+
+  ngOnInit(): void {
+    //console.log("Practice ngOnInit",this.word);
+    console.log(this.changeSelect(1)); // * виклик функції *
+
+
+    /** РЕЗУЛЬТАТ
+     * 0: {id: 1, selected: true}
+     * 1: {id: 2, selected: false}
+     */
+  }
+
+  arr = [ // * масив об'єктів *
+    {
+        id: 1,
+        selected: false,
+    },
+    {
+        id: 2,
+        selected: false,
+    },];
+
+    // ^ Функція ^
+  changeSelect(id:number){
+    let a =  this.arr.map((item) => {
+
+      if(item.id === id){
+          item.selected = !item.selected
+      }
+      return item;
+    })
+    return a;
   }
 }
