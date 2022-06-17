@@ -1,0 +1,17 @@
+<div class="main">
+  <div class="a1body">
+    <div class="content">
+      <div class="container">
+        <ul>
+          <li *ngFor="let obj of kanjiArr">
+            <div class="kanji__block">
+              <span class="kanjiInCard">{{obj.name}}</span>
+              <span class="kun">{{obj.kun}}</span>
+              <span class="on">{{obj.on}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
