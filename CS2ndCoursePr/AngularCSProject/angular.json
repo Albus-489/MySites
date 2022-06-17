@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "csBookAsylum": {
+    "mdb-angular-ui-kit-free": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cs-book-asylum",
+            "outputPath": "dist/mdb-angular-ui-kit-free",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "csBookAsylum:build:production"
+              "browserTarget": "mdb-angular-ui-kit-free:build:production"
             },
             "development": {
-              "browserTarget": "csBookAsylum:build:development"
+              "browserTarget": "mdb-angular-ui-kit-free:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "csBookAsylum:build"
+            "browserTarget": "mdb-angular-ui-kit-free:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "csBookAsylum"
+  "defaultProject": "mdb-angular-ui-kit-free"
 }
