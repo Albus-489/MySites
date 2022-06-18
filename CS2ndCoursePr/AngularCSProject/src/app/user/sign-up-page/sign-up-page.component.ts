@@ -11,32 +11,27 @@ export class SignUpPageComponent implements OnInit {
 
   constructor(public service: UserService, private toastr: ToastrService) { }
 
+  showToasterSuccess(l:string, r:string){
+    this.toastr.success(l, r)
+  }
+
+  showToasterWarning(){
+    this.toastr.warning("This is warning", "This is warning")
+  }
+
   ngOnInit() {
     this.service.formModel.reset();
   }
 
   onSubmit() {
     this.service.register().subscribe(
-      (res: any) => {
-        if (res.succeeded) {
-          this.service.formModel.reset();
-          this.toastr.success('New user created!', 'Registration successful.');
-        } else {
-          res.errors.forEach(element => {
-            switch (element.code) {
-              case 'DuplicateUserName':
-                this.toastr.error('Username is already taken','Registration failed.');
-                break;
-
-              default:
-              this.toastr.error(element.description,'Registration failed.');
-                break;
-            }
-          });
-        }
+      res => {
+        console.log(res);
+        this.showToasterSuccess('New user created!', 'Registration successful.')
+        this.service.formModel.reset();
       },
-      err => {
-        console.log(err);
+      err=> {
+        this.toastr.warning(err.error.Message, "This is warning")
       }
     );
   }

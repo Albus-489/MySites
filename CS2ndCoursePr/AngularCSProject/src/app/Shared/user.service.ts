@@ -8,15 +8,15 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
-  readonly BaseURI = 'http://localhost:54277/api';
+  readonly BaseURL = 'https://localhost:7062/api';
 
   formModel = this.fb.group({
-    UserName: ['', Validators.required],
-    Email: ['', Validators.email],
-    FirstName: [''],
-    LastName: [''],
+    userName: ['', Validators.required],
+    email: ['', Validators.email],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
     Passwords: this.fb.group({
-      Password: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, Validators.pattern('(?=\\D*\\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}')]],
       ConfirmPassword: ['', Validators.required]
     }, { validator: this.comparePasswords })
 
@@ -27,7 +27,7 @@ export class UserService {
     //passwordMismatch
     //confirmPswrdCtrl.errors={passwordMismatch:true}
     if (confirmPswrdCtrl.errors == null || 'passwordMismatch' in confirmPswrdCtrl.errors) {
-      if (fb.get('Password').value != confirmPswrdCtrl.value)
+      if (fb.get('password').value != confirmPswrdCtrl.value)
         confirmPswrdCtrl.setErrors({ passwordMismatch: true });
       else
         confirmPswrdCtrl.setErrors(null);
@@ -36,20 +36,20 @@ export class UserService {
 
   register() {
     var body = {
-      UserName: this.formModel.value.UserName,
-      Email: this.formModel.value.Email,
-      FirstName: this.formModel.value.FirstName,
-      LastName: this.formModel.value.LastName,
-      Password: this.formModel.value.Passwords.Password
+      userName: this.formModel.value.userName,
+      email: this.formModel.value.email,
+      password: this.formModel.value.Passwords.password,
+      firstName: this.formModel.value.firstName,
+      lastName: this.formModel.value.lastName
     };
-    return this.http.post(this.BaseURI + '/ApplicationUser/Register', body);
+    return this.http.post(this.BaseURL + '/User/signUp', body);
   }
 
   login(formData) {
-    return this.http.post(this.BaseURI + '/ApplicationUser/Login', formData);
+    return this.http.post(this.BaseURL + 'User/signIn', formData);
   }
 
   getUserProfile() {
-    return this.http.get(this.BaseURI + '/UserProfile');
+    return this.http.get(this.BaseURL + '/UserProfile');
   }
 }
