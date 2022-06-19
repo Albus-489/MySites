@@ -46,10 +46,18 @@ export class UserService {
   }
 
   login(formData) {
-    return this.http.post(this.BaseURL + 'User/signIn', formData);
+    return this.http.post(this.BaseURL + '/User/signIn', formData);
   }
 
   getUserProfile() {
-    return this.http.get(this.BaseURL + '/UserProfile');
+    return this.http.get(this.BaseURL + '/User/GetAuthorize');
+  }
+
+  getAllUserNames(){
+    return this.http.get(this.BaseURL + '/User/Get')
+  }
+
+  getAllBooks(){
+    return this.http.get(this.BaseURL + '/Books/Get')
   }
 }

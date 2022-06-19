@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 // MDB Modules
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -23,18 +24,23 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginPageComponent } from './user/login-page/login-page.component';
-import { SignUpPageComponent } from './user/sign-up-page/sign-up-page.component';
-import { UserPageComponent } from './user/user-page/user-page.component';
+import { LoginPageComponent } from './usercmp/login-page/login-page.component';
+import { SignUpPageComponent } from './usercmp/sign-up-page/sign-up-page.component';
+import { UserPageComponent } from './usercmp/user-page/user-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
+import { HomeComponent } from './home/home.component';
+import { UsercmpComponent } from './usercmp/usercmp.component';
+import { UserService } from './shared/user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     SignUpPageComponent,
-    UserPageComponent
+    UserPageComponent,
+    HomeComponent,
+    UsercmpComponent
   ],
   imports: [
     BrowserModule,
@@ -65,3 +71,8 @@ import { ToastrModule } from 'ngx-toastr';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// UserService, {
+//   provide: HTTP_INTERCEPTORS,
+//   useClass: AuthInterceptor,
+//   multi: true
+// }
