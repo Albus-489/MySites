@@ -33,6 +33,7 @@ import { HomeComponent } from './home/home.component';
 import { UsercmpComponent } from './usercmp/usercmp.component';
 import { UserService } from './shared/user.service';
 import { ForumComponent } from './forum/forum.component';
+import { BookPageComponent } from './book-page/book-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ForumComponent } from './forum/forum.component';
     UserPageComponent,
     HomeComponent,
     UsercmpComponent,
-    ForumComponent
+    ForumComponent,
+    BookPageComponent
   ],
   imports: [
     BrowserModule,

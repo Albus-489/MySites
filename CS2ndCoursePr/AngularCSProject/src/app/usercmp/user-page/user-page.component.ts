@@ -21,10 +21,14 @@ export class UserPageComponent implements OnInit {
     'email': 'loading..'
   }
 
+  d = "danger";
+  s = "success";
+
   ngOnInit() {
 
     console.log("TOKEN ==> " + localStorage.getItem('token'));
     this.SetUserInfo();
+
     this.service.getAllBooks().subscribe(
       res => {
         this.bookList = res;
@@ -35,7 +39,7 @@ export class UserPageComponent implements OnInit {
       }
     )
 
-    // TODO configure authorize method
+    // TODO configure register method
     // this.service.getUserProfile().subscribe(
     //   res => {
     //     this.userDetails = res;
@@ -49,11 +53,9 @@ export class UserPageComponent implements OnInit {
   }
 
   ratingSet(r:number): string{
-    let d = "danger";
-    let s = "success";
-    let how = d;
+    let how = this.d;
 
-    r > 45 ? how = s : how = d
+    r > 45 ? how = this.s : how = this.d
     return how;
   }
 
@@ -77,5 +79,10 @@ export class UserPageComponent implements OnInit {
   }
   onForum() {
     this.router.navigate(['/ForumPage']);
+  }
+
+  onBookClikc(id:any){
+    localStorage.setItem('bookID', id)
+    this.router.navigate(['/BookPage']);
   }
 }

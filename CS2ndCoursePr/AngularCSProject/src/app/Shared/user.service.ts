@@ -59,4 +59,7 @@ export class UserService {
   getAllBooks(){
     return this.http.get(this.BaseURL + '/Books/Get')
   }
+  getAllAuthors(){
+    return this.http.get(this.BaseURL + '/Authors/GetAll')
+  }
 }

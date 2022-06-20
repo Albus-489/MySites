@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="lside">
+    <img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/book-bookmark-icon.png" alt="">
+    <a class="navbar-brand text-white">{{bookModel.name}}</a>
+  </div>
+  <div class="btns">
+    <button class="btn m-1 btn-success my-2 my-sm-0" (click)="onForum()">Forum</button>
+    <button class="btn btn-success my-2 my-sm-0" (click)="onMyPage()">My page</button>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="bookPageBody">
+    <div class="book">
+      <div class="card cardHead mt-4">
+        <div class="row">
+          <div class="bookImage col-3">
+            <img src="{{bookModel.pictureURL}}" alt="">
+          </div>
+          <div class="col">
+            <span id="bookInfo">{{bookModel.description}}</span>
+          </div>
+          <div class="authorInfo mt-3">
+            <span >Author: {{authorModel.name}} ({{authorModel.birth | date:'shortDate'}} - {{authorModel.death | date:'shortDate'}})</span>
+          <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
