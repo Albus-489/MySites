@@ -1,13 +1,61 @@
 
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand text-white">My Page</a>
-  <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+  <div class="lside">
+    <img src="https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/homepage_house_home_page-512.png" alt="">
+    <a class="navbar-brand text-white">My Page</a>
+  </div>
+  <div class="btns">
+    <button class="btn m-1 btn-success my-2 my-sm-0" (click)="onForum()">Forum</button>
+    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+  </div>
 </nav>
 
-<div class="card m-5" style="width:18rem" >
-  <ul class="list-group">
-    <!-- <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
-    <li class="list-group-item"><strong>FullName : </strong>{{userDetails.fullName}}</li>
-    <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li> -->
-  </ul>
+<div class="cardsUserPage">
+
+  <div class="container mt-5 userInfoCard" style="width:35rem" >
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Username : </strong>{{userModel.userName}}</li>
+      <li class="list-group-item"><strong>FullName : </strong>{{userModel.fullName}}</li>
+      <li class="list-group-item"><strong>Email :    </strong>{{userModel.email}}</li>
+    </ul>
+  </div>
+
+  <div class="container  mt-5">
+    <span style="color: white">Collections</span>
+    <table class="table bookcase align-middle mb-0 bg-white">
+      <thead class="bg-light">
+        <tr>
+          <th>Name | Genre</th>
+          <th>Description</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of bookList">
+          <td>
+            <div class="d-flex align-items-center">
+              <img
+                  src="{{book.pictureURL}}"
+                  alt=""
+                  style="width: 65px; height: 95px"
+                  />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">{{book.name}}</p>
+                <p class="text-muted mb-0">{{book.genre}}</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            {{book.descriptionInfo}}
+          </td>
+          <td>
+            <span class="badge badge-{{ratingSet(book.rating)}} rounded-pill d-inline">{{book.rating}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
+
+

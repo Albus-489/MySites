@@ -32,6 +32,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './home/home.component';
 import { UsercmpComponent } from './usercmp/usercmp.component';
 import { UserService } from './shared/user.service';
+import { ForumComponent } from './forum/forum.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { UserService } from './shared/user.service';
     SignUpPageComponent,
     UserPageComponent,
     HomeComponent,
-    UsercmpComponent
+    UsercmpComponent,
+    ForumComponent
   ],
   imports: [
     BrowserModule,

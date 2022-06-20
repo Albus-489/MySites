@@ -1,0 +1,23 @@
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <div class="lftside">
+    <img src="https://ict-solutions-events.com/wp-content/uploads/2019/07/open-forum-icon.png" alt="">
+  <a class="navbar-brand text-white">Forum page</a>
+  </div>
+  <div class="btns">
+    <button class="btn m-1 btn-info my-2 my-sm-0" (click)="onBackToMyPage()">Back to page</button>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="branches__list mt-4" >
+      <div class="card bg-dark" *ngFor="let branch of branches">
+        <div class="branchPicture">
+          <img src="{{branch.headerPicture}}" alt="{{branch.name}}">
+          <hr>
+        </div>
+        <div class="branchName">
+          <span>{{branch.name}}</span>
+        </div>
+      </div>
+  </div>
+</div>

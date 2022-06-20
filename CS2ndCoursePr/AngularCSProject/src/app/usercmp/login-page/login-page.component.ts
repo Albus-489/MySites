@@ -37,8 +37,15 @@ export class LoginPageComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.service.login(form.value).subscribe(
       (res: any) => {
-        localStorage.setItem('token', res.token);
-        this.router.navigateByUrl('UserPage');
+        if(res.Message != null){
+          console.log("Response on login page ==>", res);
+          this.toastr.error( res.Message, 'ERROR');
+        }
+        else{
+          localStorage.setItem('token', res.Token);
+          localStorage.setItem('uname', this.formModel.userName);
+          this.router.navigateByUrl('UserPage');
+        }
       },
       err => {
         if (err.status == 400)
