@@ -1,38 +1,37 @@
 <div class="wrapper">
+  <mdb-navbar SideClass="navbar sticky-top navbar-expand-sm navbar-dark black lighten-1" [containerInside]="false">
 
-  <nav style="padding: 1% 3%; color:aliceblue" class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a title="home" class="navbar-brand" href="#"> <img src="../assets/imgs/logo.png" width="30" height="31"
-        class="d-inline-block align-top" alt=""><span style="padding-left: 15px;">Kanji road map</span></a>
+    <!-- Navbar brand -->
+    <mdb-navbar-brand>
+      <a title="home" class="navbar-brand" href="#"> <img src="../assets/imgs/logo.png" width="30" height="31"
+          class="d-inline-block align-top" alt=""><span style="padding-left: 15px;">Kanji road map</span></a>
+    </mdb-navbar-brand>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav text-center">
-        <li>
-          <a title="a1" routerLink="a1">( JLPT4 ) </a>
+    <!-- Collapsible content -->
+    <links>
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" title="a1" routerLink="a1">( JLPT4 ) </a>
         </li>
-        <li>
-          <a title="a2" routerLink="a2"> ( JLPT3 ) </a>
+        <li class="nav-item">
+          <a class="nav-link" title="a2" routerLink="a2"> ( JLPT3 ) </a>
         </li>
-        <li>
-          <a title="b1" routerLink="b1">( JLPT2 ) </a>
+        <li class="nav-item">
+          <a class="nav-link" title="b1" routerLink="b1">( JLPT2 ) </a>
         </li>
-        <li>
-          <a title="b2" routerLink="b2">( JLPT1 ) </a>
+        <li class="nav-item">
+          <a class="nav-link" title="b2" routerLink="b2">( JLPT1 ) </a>
         </li>
+
       </ul>
-    </div>
-  </nav>
+      <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
 
+  </mdb-navbar>
+  <!--/.Navbar-->
   <div class="components">
     <router-outlet></router-outlet>
   </div>

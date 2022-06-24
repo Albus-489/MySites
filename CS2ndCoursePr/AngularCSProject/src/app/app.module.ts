@@ -34,6 +34,7 @@ import { UsercmpComponent } from './usercmp/usercmp.component';
 import { UserService } from './shared/user.service';
 import { ForumComponent } from './forum/forum.component';
 import { BookPageComponent } from './book-page/book-page.component';
+import { BranchPageComponent } from './forum/branch-page/branch-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { BookPageComponent } from './book-page/book-page.component';
     HomeComponent,
     UsercmpComponent,
     ForumComponent,
-    BookPageComponent
+    BookPageComponent,
+    BranchPageComponent
   ],
   imports: [
     BrowserModule,

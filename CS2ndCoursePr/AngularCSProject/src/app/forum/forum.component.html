@@ -12,7 +12,7 @@
   <div class="branches__list mt-4" >
       <div class="card bg-dark" *ngFor="let branch of branches">
         <div class="branchPicture">
-          <img src="{{branch.headerPicture}}" alt="{{branch.name}}">
+          <img (click)="onBranchClick(branch.id, branch.name)" src="{{branch.headerPicture}}" alt="{{branch.name}}">
           <hr>
         </div>
         <div class="branchName">

@@ -1,5 +1,6 @@
 ul{
   margin-top: 2%;
+  margin-bottom: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -13,14 +14,6 @@ ul{
     width: 100px;
     height: 100px;
     margin: 0 10px 20px 0;
-    :hover{
-      background-color: #d9fad0;
-      font-size: large;
-      overflow:scroll;
-
-      .kanjiInCard{display: none;}
-      .kun{display: flex;}
-    }
   }
 
   .kanji__block{
@@ -36,8 +29,23 @@ ul{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #baeba3;
+    background-color: #bdf1a7;
     border-radius: 6px;
+  }
+}
 
+.kanaToggle{
+  display: flex;
+  justify-content: end;
+
+  margin-top: 0;
+  padding: 0 1% 25px 2%;
+
+  span{
+    padding: 4px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: bisque;
+    border-radius: 5px;
   }
 }

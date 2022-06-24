@@ -9,5 +9,9 @@ ul, ol, li{
 
 body{
   background-image: url(./assets/imgs/sakuraBack.png);
-  background-size: cover;
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+mdb-navbar-brand{
+  padding: .5%;
 }

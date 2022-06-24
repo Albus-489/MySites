@@ -13,4 +13,12 @@ export class ForumserviceService {
   getAllBranches(){
     return this.http.get(this.BaseURL + '/Branches/GetAllBranches')
   }
+
+  getAllThemes(){
+    return this.http.get(this.BaseURL + '/Themes/GetAllThemes')
+  }
+
+  addTheme(model:any){
+    return this.http.post(this.BaseURL + '/Themes/Create', model)
+  }
 }

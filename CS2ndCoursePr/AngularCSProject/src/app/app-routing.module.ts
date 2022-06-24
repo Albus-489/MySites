@@ -8,6 +8,7 @@ import { UserPageComponent } from './usercmp/user-page/user-page.component';
 import { UsercmpComponent } from './usercmp/usercmp.component';
 import { ForumComponent } from './forum/forum.component';
 import { BookPageComponent } from './book-page/book-page.component';
+import { BranchPageComponent } from './forum/branch-page/branch-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'User/LogInPage', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
   },
   { path: "UserPage", component: UserPageComponent },
   { path: "ForumPage", component: ForumComponent },
+  { path: "BranchPage", component: BranchPageComponent },
   { path: "BookPage", component: BookPageComponent },
 ];
 

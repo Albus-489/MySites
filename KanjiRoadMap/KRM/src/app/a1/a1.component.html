@@ -4,13 +4,26 @@
       <div class="container">
         <ul>
           <li *ngFor="let obj of kanjiArr">
-            <div class="kanji__block">
-              <span class="kanjiInCard">{{obj.name}}</span>
-              <span class="kun">{{obj.kun}}</span>
-              <span class="on">{{obj.on}}</span>
+
+            <div class="kanji__block waves-light" type="button" mdbPopover="{{obj.on}}" placement="top"
+              mdbPopoverHeader="{{obj.meaning}}" mdbWavesEffect>
+
+              <div>
+                <span class="kun">{{obj.kun}}</span>
+                <span class="on">{{obj.on}}</span>
+              </div>
+              <div><span class="kanjiInCard">{{obj.name}}</span></div>
             </div>
           </li>
         </ul>
+      </div>
+      <div class="kanaToggle sticky-bottom">
+        <span> On/Kun
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="customSwitches">
+          <label class="custom-control-label" for="customSwitches"></label>
+        </div>
+      </span>
       </div>
     </div>
   </div>

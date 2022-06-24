@@ -22,4 +22,9 @@ export class ForumComponent implements OnInit {
   onBackToMyPage(){
     this.router.navigate(['/UserPage']);
   }
+  onBranchClick(id:any, name:any){
+    localStorage.setItem('branchID', id);
+    localStorage.setItem('branchName', name);
+    this.router.navigate(['/BranchPage']);
+  }
 }
