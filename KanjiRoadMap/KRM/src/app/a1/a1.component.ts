@@ -8,12 +8,26 @@ import {default as data} from "../Data/kanji.json"
 })
 export class A1Component implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  kanjiArr = data
+  kanaProps = {
+    hiraganaIsOn: true,
+    katakanaIsOn: true,
+    translateIsOn: true
+  }
+
+  kanjiArr = data // data from json (look at imports)
+
+
+  testCheck(){
+    // this.checkState = !this.checkState
+    // alert(this.checkState)
+  }
+
 }
 
 

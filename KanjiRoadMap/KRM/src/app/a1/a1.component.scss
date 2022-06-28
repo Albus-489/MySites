@@ -41,11 +41,12 @@ ul{
   margin-top: 0;
   padding: 0 1% 25px 2%;
 
-  span{
-    padding: 4px 15px;
-    display: flex;
-    justify-content: space-between;
+  section{
+    width: 120px;
     background-color: bisque;
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-around;
     border-radius: 5px;
   }
 }

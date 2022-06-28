@@ -7,6 +7,7 @@ import { A1Component } from './a1/a1.component';
 import { A2Component } from './a2/a2.component';
 import { B1Component } from './b1/b1.component';
 import { B2Component } from './b2/b2.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatCheckboxModule,
     MDBBootstrapModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
