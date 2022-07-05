@@ -20,7 +20,7 @@
 
       <div class="pagin sticky-bottom">
         <button (click)="prevPage()" mat-raised-button><mat-icon>keyboard_arrow_left</mat-icon></button>
-        <input disabled [defaultValue]="pageNumber" />
+        <input autofocus (change)="changePage(pageNumber)" [(ngModel)]="pageNumber" [defaultValue]="pageNumber" />
         <button (click)="nextPage()" mat-raised-button><mat-icon>keyboard_arrow_right</mat-icon></button>
       </div>
     </div>

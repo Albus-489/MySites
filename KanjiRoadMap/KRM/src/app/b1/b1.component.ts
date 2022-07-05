@@ -26,11 +26,19 @@ export class B1Component implements OnInit {
 
   changePage(n:number) {
 
+    if(n > 19 || n < 1){
+      n = 1
+      this.pageNumber=1
+    }
     this.kanjiArr = data.filter((item, index) => {
       return(
         index < n * this.numOfElem && index > (n*this.numOfElem - this.numOfElem) - 1
       )
     })
+  }
+
+  asd(){
+    console.log(this.pageNumber);
   }
 
   prevPage(){
@@ -50,13 +58,13 @@ export class B1Component implements OnInit {
       this.changePage(this.pageNumber)
     }
     else{
-      this.pageNumber+=1;
+      this.pageNumber++;
       this.changePage(this.pageNumber)
     }
   }
 
   kanjiArr:any // data from json (look at imports)
-  pageNumber:any = 1;
+  pageNumber:number = 1;
   numOfElem:number = 40 //number of elements on page
 
   // ^ PAGINATOR ^ ******

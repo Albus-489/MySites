@@ -13,6 +13,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UserpageComponent } from './userpage/userpage.component';
 import { FooterComponent } from './userpage/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FooterComponent } from './userpage/footer/footer.component';
     MatPaginatorModule,
     MatIconModule,
     MatButtonModule,
+    FormsModule,
     MDBBootstrapModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
