@@ -1,11 +1,28 @@
-<p>a2 works!</p>
-<button
-  type="button"
-  mdbBtn color="default"
-  class="waves-light"
-  mdbPopover="And here some amazing content. It's very engaging. Right?"
-  placement="right"
-  mdbPopoverHeader="Popover on right" mdbWavesEffect
->
-  Click
-</button>
+<div class="main">
+  <div class="a1body">
+    <div class="content">
+      <div class="container">
+        <ul>
+          <li *ngFor="let obj of kanjiArr">
+
+            <div class="kanji__block waves-light" type="button" mdbPopover="{{obj.on}}" placement="top"
+              mdbPopoverHeader="{{obj.meaning}}" mdbWavesEffect>
+
+              <div>
+                <span class="kun">{{obj.kun}}</span>
+                <span class="on">{{obj.on}}</span>
+              </div>
+              <div><span class="kanjiInCard">{{obj.name}}</span></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pagin sticky-bottom">
+        <button (click)="prevPage()" mat-raised-button><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <input disabled [defaultValue]="pageNumber" />
+        <button (click)="nextPage()" mat-raised-button><mat-icon>keyboard_arrow_right</mat-icon></button>
+      </div>
+    </div>
+  </div>
+</div>

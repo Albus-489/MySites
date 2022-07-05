@@ -3,29 +3,29 @@
 
     <!-- Navbar brand -->
     <mdb-navbar-brand>
-      <a title="home" class="navbar-brand" href="#"> <img src="../assets/imgs/logo.png" width="30" height="31"
-          class="d-inline-block align-top" alt=""><span style="padding-left: 15px;">Kanji road map</span></a>
+      <a title="UserPage" class="navbar-brand" routerLink="userpage"><img src="../assets/imgs/logo.png" width="28" height="29"
+          class="d-inline-block align-top" alt=""></a><span class="siteName">Kanji Roadmap</span>
     </mdb-navbar-brand>
 
     <!-- Collapsible content -->
     <links>
-
       <!-- Links -->
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" title="a1" routerLink="a1">( JLPT4 ) </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" title="a2" routerLink="a2"> ( JLPT3 ) </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" title="b1" routerLink="b1">( JLPT2 ) </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" title="b2" routerLink="b2">( JLPT1 ) </a>
-        </li>
-
-      </ul>
+      <div class="lnks">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" title="a1" routerLink="a1">( JLPT4 ) </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" title="a2" routerLink="a2">( JLPT3 )</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" title="b1" routerLink="b1">( JLPT2 ) </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" title="b2" routerLink="b2">( JLPT1 ) </a>
+          </li>
+        </ul>
+      </div>
       <!-- Links -->
     </links>
     <!-- Collapsible content -->
@@ -35,5 +35,4 @@
   <div class="components">
     <router-outlet></router-outlet>
   </div>
-
 </div>

@@ -9,9 +9,11 @@ import {default as data} from "../Data/kanji.json"
 export class A1Component implements OnInit {
 
 
+
   constructor() { }
 
   ngOnInit(): void {
+    this.changePage(this.pageNumber) //init first page of kanji
   }
 
   kanaProps = {
@@ -20,13 +22,43 @@ export class A1Component implements OnInit {
     translateIsOn: true
   }
 
-  kanjiArr = data // data from json (look at imports)
+  // ^ PAGINATOR ^ ******
 
+  changePage(n:number) {
 
-  testCheck(){
-    // this.checkState = !this.checkState
-    // alert(this.checkState)
+    this.kanjiArr = data.filter((item, index) => {
+      return(
+        index < n * this.numOfElem && index > (n*this.numOfElem - this.numOfElem) - 1
+      )
+    })
   }
+
+  prevPage(){
+    this.pageNumber-=1;
+    this.changePage(this.pageNumber)
+  }
+
+  nextPage(){
+    this.pageNumber+=1;
+    this.changePage(this.pageNumber)
+  }
+
+  prevDis(){
+    if(this.pageNumber !== 1){return false}
+    else{return true}
+  }
+
+  nextDis(){
+    if(this.pageNumber !== 2){return false}
+    else{return true}
+  }
+
+  kanjiArr:any // data from json (look at imports)
+  pageNumber:any = 1;
+  numOfElem:number = 40 //number of elements on page
+
+  // ^ PAGINATOR ^ ******
+
 
 }
 

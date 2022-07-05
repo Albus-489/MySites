@@ -18,6 +18,12 @@
         </ul>
       </div>
 
+      <div class="pagin sticky-bottom">
+        <button [disabled]="prevDis()" (click)="prevPage()" mat-raised-button><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <input disabled [defaultValue]="pageNumber" />
+        <button [disabled]="nextDis()" (click)="nextPage()" mat-raised-button><mat-icon>keyboard_arrow_right</mat-icon></button>
+      </div>
+
       <!-- TODO make more checkboxes with variants 1:Hiragana 2:Katakana 3:Traslate -->
       <!-- <div class="kanaToggle sticky-bottom">
         <section>
