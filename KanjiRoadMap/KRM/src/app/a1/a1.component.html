@@ -5,13 +5,13 @@
         <ul>
           <li *ngFor="let obj of kanjiArr">
 
-            <div class="kanji__block waves-light" type="button" mdbPopover="{{obj.on}}" placement="top"
-              mdbPopoverHeader="{{obj.meaning}}" mdbWavesEffect>
+            <div class="kanji__block waves-light"
+                 type="button"
+                 mdbPopover="Kun: {{obj.kun}} <|> On: {{obj.on}}"
+                 placement="top"
+                 mdbPopoverHeader="{{obj.meaning}}"
+                 mdbWavesEffect>
 
-              <div>
-                <span class="kun">{{obj.kun}}</span>
-                <span class="on">{{obj.on}}</span>
-              </div>
               <div><span class="kanjiInCard">{{obj.name}}</span></div>
             </div>
           </li>
