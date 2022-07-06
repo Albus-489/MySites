@@ -8,19 +8,41 @@ import {default as data} from "../Data/kanji1.json"
 })
 export class B2Component implements OnInit {
 
-
-
   constructor() { }
 
   ngOnInit(): void {
     this.changePage(this.pageNumber) //init first page of kanji
   }
 
-  kanaProps = {
-    hiraganaIsOn: true,
-    katakanaIsOn: true,
-    translateIsOn: true
+  // * kana and translation toggle
+  translationState: boolean = true;
+  katakana: boolean = true;
+  hiragana: boolean = true;
+  tOff = 'Translation is off'
+  hOff = 'Hiragana is off'
+  kOff = 'Katakana is off'
+
+
+  kanaToggle(n: number) {
+
+    switch (n) {
+      case 1:
+        this.translationState = !this.translationState
+        break;
+
+      case 2:
+        this.katakana = !this.katakana
+        break;
+
+      case 3:
+        this.hiragana = !this.hiragana
+        break;
+
+      default:
+        break;
+    }
   }
+  // * kana and translation toggle
 
   // ^ PAGINATOR ^ ******
 
@@ -35,10 +57,6 @@ export class B2Component implements OnInit {
         index < n * this.numOfElem && index > (n*this.numOfElem - this.numOfElem) - 1
       )
     })
-  }
-
-  asd(){
-    console.log(this.pageNumber);
   }
 
   prevPage(){

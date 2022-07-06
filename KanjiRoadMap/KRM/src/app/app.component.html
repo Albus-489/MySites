@@ -3,8 +3,8 @@
 
     <!-- Navbar brand -->
     <mdb-navbar-brand>
-      <a title="UserPage" class="navbar-brand" routerLink="userpage"><img src="../assets/imgs/logo.png" width="28" height="29"
-          class="d-inline-block align-top" alt=""></a><span class="siteName">Kanji Roadmap</span>
+      <a (click)="musicToggle()" class="navbar-brand"><img src="../assets/imgs/logo.png" width="30" height="30"
+        [className]="isActive ? 'circle_motion' : 'circle_static'" alt=""></a><span class="siteName">Kanji Roadmap</span>
     </mdb-navbar-brand>
 
     <!-- Collapsible content -->
