@@ -6,6 +6,7 @@ import { A2Component } from './a2/a2.component';
 import { B1Component } from './b1/b1.component';
 import { B2Component } from './b2/b2.component';
 import { UserpageComponent } from './userpage/userpage.component';
+import { SettingspageComponent } from './settingspage/settingspage.component';
 
 const routes: Routes = [
   //{path: '', component: AppComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'a2', component:A2Component},
   {path: 'b1', component:B1Component},
   {path: 'b2', component:B2Component},
-  {path: 'userpage', component:UserpageComponent}
+  {path: 'userpage', component:UserpageComponent},
+  {path: 'settings', component:SettingspageComponent},
 ];
 
 @NgModule({

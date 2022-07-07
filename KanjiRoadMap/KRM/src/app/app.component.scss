@@ -4,7 +4,10 @@ a{
     color: aquamarine;
   }
 }
-
+.lnks{
+  display: flex;
+  justify-content: center;
+}
 .circle_motion{
   animation: spin 2s linear infinite;
 }

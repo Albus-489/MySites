@@ -14,6 +14,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UserpageComponent } from './userpage/userpage.component';
 import { FooterComponent } from './userpage/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { SettingspageComponent } from './settingspage/settingspage.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     B1Component,
     B2Component,
     UserpageComponent,
-    FooterComponent
+    FooterComponent,
+    SettingspageComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatButtonModule,
     FormsModule,
+    MatDividerModule,
     MDBBootstrapModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
